@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_213033) do
+ActiveRecord::Schema.define(version: 2019_11_13_043631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_11_12_213033) do
   end
 
   create_table "lesson_payments", force: :cascade do |t|
-    t.string "type"
+    t.string "payment_type"
     t.float "amount"
     t.date "date"
     t.date "hours"

@@ -4,6 +4,9 @@
 <p><%= @person.email %></p>
 <h4>Phone: </h4>
 <p><%= @person.phone %></p>
+<h4>Age: </h4>
+<p><%= @person.age %></p>
 <button><%= link_to 'Back', people_path %></button>
 <button><%= link_to 'Edit', edit_person_path(@person) %></button>
 <button><%= link_to 'Delete', @person, method: :delete %></button>
+<button><%= link_to 'Add Payment', new_lesson_payment_path %></button>

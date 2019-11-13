@@ -2,7 +2,7 @@ class Person < ApplicationRecord
   # Associations
   has_many :lessons
   has_many :lesson_payments
-  has_one :lesson_details
+  has_one :lesson_detail
 
   # validates :first_name, :last_name, presence: true
 

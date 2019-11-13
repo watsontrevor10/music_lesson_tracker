@@ -1,0 +1,14 @@
+<h1> All Payments </h1>
+<button><%= link_to 'Add Payment', new_lesson_payment_path %></button>
+<br />
+<hr />
+<% @payments.each do |payment| %>
+  <h2><%= payment.payment_type %></h2>
+  <p><%= payment.amount %>
+  <%= payment.date %>
+  <button><%= link_to 'Open Record', lesson_payment_path(payment) %></button>
+  <button><%= link_to 'Edit', edit_lesson_payment_path(payment) %></button>
+<% end %>
+<br />
+<hr />
+<button><%= link_to 'Add Payment', new_lesson_payment_path %></button>
