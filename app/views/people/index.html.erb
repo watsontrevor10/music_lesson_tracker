@@ -1,2 +1,13 @@
-<h1>People#index</h1>
-<p>Find me in app/views/people/index.html.erb</p>
+<h1> All Students </h1>
+<button><%= link_to 'Add Student', new_person_path %></button>
+<br />
+<hr />
+<% @people.each do |person| %>
+  <h2><%= person.full_name %></h2>
+  <p><%= person.contact_info %>
+  <button><%= link_to 'Open Record', person_path(person) %></button>
+  <button><%= link_to 'Edit', edit_person_path(person) %></button>
+<% end %>
+<br />
+<hr />
+<button><%= link_to 'Add Student', new_person_path %></button>

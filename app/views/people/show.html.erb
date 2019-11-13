@@ -1,2 +1,9 @@
-<h1>People#show</h1>
-<p>Find me in app/views/people/show.html.erb</p>
+<h1><%= @person.full_name %></h1>
+<h3><%= @person.parent_name %></h3>
+<h4>Email: </h4> 
+<p><%= @person.email %></p>
+<h4>Phone: </h4>
+<p><%= @person.phone %></p>
+<button><%= link_to 'Back', people_path %></button>
+<button><%= link_to 'Edit', edit_person_path(@person) %></button>
+<button><%= link_to 'Delete', @person, method: :delete %></button>

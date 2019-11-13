@@ -1,2 +1,22 @@
-<h1>People#new</h1>
-<p>Find me in app/views/people/new.html.erb</p>
+<h1>New Student</h1>
+<%= form_for @person do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+
+<br />
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+  
+<br />
+  <%= f.submit %>
+  <button><%= link_to "Cancel", people_path %></button>
+<% end %>
