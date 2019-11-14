@@ -1,19 +1,21 @@
 class LessonPaymentsController < ApplicationController
+  before_action :payment_find only: [:show, :edit, :update, :destroy]
+  before_action :person_find
+
   def index
-    @payments = LessonPayment.all
+    @payments = @person.payments
   end
 
   def show
-    @payment = LessonPayment.find(params[:id])
+    #@payment = Payment.find(params[:id]) 
   end
 
   def new
-    # @person = Person.find(params[:id])
-    @payment = LessonPayment.new 
+  
   end
 
   def edit
-    @payment = LessonPayment.find(params[:id])
+    
   end
 
   def create 
@@ -27,7 +29,7 @@ class LessonPaymentsController < ApplicationController
   end
 
   def update
-    @payment = LessonPayment.find(params[:id])
+    
 
     if @payment.update(payment_params)
       redirect_to lesson_payment_path
@@ -37,12 +39,20 @@ class LessonPaymentsController < ApplicationController
   end
 
   def destroy
-    Payment.find(params[:id]).destroy
+    
     redirect_to lesson_payments_path
   end
 
   private
   def payment_params 
     params.require(:payment).permit(:payment_type, :amount, :date, :hours)
+  end
+
+  def payment_find
+    @payment = Payment.find(params[:id]) 
+  end
+
+  def person_find
+    @person = Person.find(params[:person_id])
   end
 end

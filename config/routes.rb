@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   # get 'static_pages/about'
   root 'static_pages#home'
   get '/about', to: 'static_pages#about'
-  resources :people 
-  resources :lesson_payments
-  resources :lesson_details
-
+  resources :people do
+    resources :lesson_payments
+    resources :lesson_details
+  end 
 end
