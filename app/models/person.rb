@@ -4,8 +4,6 @@ class Person < ApplicationRecord
   has_many :lesson_payments
   has_one :lesson_detail
 
-  # validates :first_name, :last_name, presence: true
-
   def full_name
     "#{self.first_name} #{self.last_name}"
   end

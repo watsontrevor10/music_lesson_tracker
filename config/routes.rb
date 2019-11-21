@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about'
   resources :people do
     resources :lesson_payments
-    resources :lesson_details
   end 
+  resources :lessons
+  resources :lesson_details
 end

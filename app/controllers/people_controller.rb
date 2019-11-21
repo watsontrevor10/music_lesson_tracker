@@ -1,11 +1,11 @@
 class PeopleController < ApplicationController
-  # methods with views
+  before_action :set_person, only: [:show, :edit, :update, :destroy]
   def index
     @people = Person.all 
   end
 
   def show
-    @person = Person.find(params[:id])
+    
   end
 
   def new
@@ -27,7 +27,6 @@ class PeopleController < ApplicationController
   end
 
   def update 
-    @person = Person.find(params[:id])
   
     if @person.update(person_params)
       redirect_to person_path
@@ -37,11 +36,15 @@ class PeopleController < ApplicationController
   end
 
   def destroy 
-    Person.find(params[:id]).destroy
+    @person.destroy 
     redirect_to people_path
   end
 
   private 
+
+  def set_person
+    @person = Person.find(params[:id])
+  end
   def person_params 
     params.require(:person).permit(:first_name, :last_name, :phone, :email, :age)
   end

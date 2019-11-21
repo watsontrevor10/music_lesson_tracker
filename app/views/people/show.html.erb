@@ -9,4 +9,4 @@
 <button><%= link_to 'Back', people_path %></button>
 <button><%= link_to 'Edit', edit_person_path(@person) %></button>
 <button><%= link_to 'Delete', @person, method: :delete %></button>
-<button><%= link_to 'Add Payment', new_lesson_payment_path %></button>
+<button><%= link_to 'Add Payment', new_person_lesson_payment_path(@person) %></button>
