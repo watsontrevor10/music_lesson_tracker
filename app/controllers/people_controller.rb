@@ -2,24 +2,20 @@ class PeopleController < ApplicationController
   # methods with views
   def index
     @people = Person.all 
-    #@lesson_details = LessonDetail.all
   end
 
   def show
     @person = Person.find(params[:id])
-    #@lesson_detail = Person.LessonDetail.find(params(:id))
   end
 
   def new
     @person = Person.new
-    #@lesson_detail = Person.LessonDetail.new 
   end
 
   def edit
     @person = Person.find(params[:id])
   end
 
-  # methods without views
   def create 
     @person = Person.new(person_params)
 
